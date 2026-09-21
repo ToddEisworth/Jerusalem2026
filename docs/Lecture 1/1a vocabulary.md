@@ -1,68 +1,172 @@
-# Vocabulary
+# Reduced Product Vocabulary
 
-##  Basic Terms
+Throughout, $I$ is a proper ideal on a cardinal $\kappa$, and
+$\langle \lambda_i : i<\kappa\rangle$ is a sequence of cardinals.
 
-We lay out our notation for some standard concepts, mostly trying to stay consistent with [T].
+## Order Modulo an Ideal
 
-The full binary tree is
-
-$$
-2^{<\omega}=\bigcup_{m<\omega}2^m,
-$$
-
-and $2^m$ is level $m$. 
-
-For $s,t\in 2^{<\omega}$, we write $s\unlhd t$ if $s$ is an initial segment of $t$, and $s\lhd t$ if $s$ is a proper initial segment of $t$.     We write $|s|$ for the length of $s$, so node $s$ lies on level $|s|$.
-
-By a **tree**, we mean a meet-closed set \(T\subseteq 2^{<\omega}\), ordered by the inherited initial-segment relation \(\unlhd\), having a least element, such that every \(t\in T\) has two incompatible extensions in \(T\).
-
-For $t\in T$, the **height of $t$ in $T$** is
+For functions $f,g$ with domain $\kappa$, write
 
 $$
-\operatorname{ht}_T(t)=\left|\{s\in T:s\lhd t\}\right|.
+f<_I g
 $$
 
-The **$m$th level of $T$** is
+if
 
 $$
-T(m)=\{t\in T:\operatorname{ht}_T(t)=m\}.
+\{i<\kappa:g(i)\leq f(i)\}\in I.
 $$
 
-Thus, the level of a node in $T$ is determined by its position in the tree $T$, whereas its length $|t|$ is its level in the ambient tree $2^{<\omega}$. These need not be the same. In particular, a node on level $m$ of $T$ may have length greater than $m$.
+Thus $f<_I g$ means that $f(i)<g(i)$ for all $i<\kappa$ outside an $I$-small set.
 
-If $S$ and $T$ are trees, we say that $S$ is a **subtree** of $T$ if $S\subseteq T$ and the tree order on $S$ is the restriction of the tree order on $T$.
-
-This definition is very general. Note that it does not require that $S$ is closed under initial segments of $T$, nore does it require that a level of $S$ is contained in some level of $T$.  We won't need the full generality, however, and the following gets us a more organized concept.
-
-
-
-Suppose $S$ is a subtree of $T$ and there is a strictly increasing sequence
+Similarly,
 
 $$
-\ell_0<\ell_1<\ell_2<\cdots
+f\leq_I g
 $$
 
-such that
+means
 
 $$
-S(n)\subseteq T(\ell_n)
+\{i<\kappa:f(i)>g(i)\}\in I.
 $$
 
-for every $n<\omega$. We call $\{\ell_n:n<\omega\}$ the **level set of $S$ in $T$**.  
+## Positive Sets
 
-We say that a subtree $S$ of $T$ is a **strong subtree** of $T$ if $S$ has a level set in $T$ and whenever $s\in S(n)$ and $t$ is an immediate successor of $s$ in $T$, then there is exactly one node of $S(n+1)$ extending $t$.  
+The collection of $I$-positive sets is
 
-Thus, a strong subtree preserves the branching pattern of the larger tree on the subtree's level set.
+$$
+I^+=\mathcal P(\kappa)\setminus I.
+$$
 
+Thus $B\in I^+$ means that $B$ is not $I$-small.
 
+## Restriction of an Ideal
 
+If $B\in I^+$, we regard $I\upharpoonright B$ as an ideal on $\kappa$, defined by
 
+$$
+I\upharpoonright B
+=
+\{A\subseteq\kappa:A\cap B\in I\}.
+$$
 
+Thus comparison modulo $I\upharpoonright B$ depends only on the coordinates in $B$.
 
+## True Cofinality
 
+Let
 
+$$
+P=\left(\prod_{i<\kappa}\lambda_i,<_I\right).
+$$
 
-## References
+We say that
 
-  
-- [T] Todorcevic, Stevo. *Introduction to Ramsey Spaces*. Annals of Mathematics Studies, vol. 174. Princeton, NJ: Princeton University Press, 2010.
+$$
+\operatorname{tcf}(P)=\theta
+$$
+
+if $\theta$ is regular and there is a sequence
+
+$$
+\langle f_\alpha:\alpha<\theta\rangle
+$$
+
+which is $<_I$-increasing and cofinal in $P$.
+
+Equivalently,
+
+$$
+\alpha<\beta<\theta
+\quad\Longrightarrow\quad
+f_\alpha<_I f_\beta,
+$$
+
+and for every $g\in\prod_{i<\kappa}\lambda_i$, there is some $\alpha<\theta$ such that
+
+$$
+g<_I f_\alpha.
+$$
+
+## Limit Modulo an Ideal
+
+We write
+
+$$
+\operatorname{tlim}_I\lambda_i=\lambda
+$$
+
+if, for every $\mu<\lambda$,
+
+$$
+\{i<\kappa:\lambda_i<\mu\}\in I.
+$$
+
+Thus the sequence $\langle\lambda_i:i<\kappa\rangle$ converges to $\lambda$ modulo $I$.
+
+## Directedness
+
+A partial order $P$ is **$\theta$-directed** if every subset of $P$ of cardinality less than $\theta$ has an upper bound.
+
+Thus
+
+$$
+\left(\prod_{i<\kappa}\lambda_i,<_I\right)
+$$
+
+is $\theta$-directed if every family
+
+$$
+\{f_\alpha:\alpha<\delta\}
+\subseteq
+\prod_{i<\kappa}\lambda_i,
+\qquad
+\delta<\theta,
+$$
+
+has an upper bound modulo $I$.
+
+## The Bounded Ideal
+
+For an infinite cardinal $\kappa$, the bounded ideal on $\kappa$ is
+
+$$
+J_\kappa^{\mathrm{bd}}
+=
+\{A\subseteq\kappa:\sup A<\kappa\}.
+$$
+
+Thus
+
+$$
+f<_{J_\kappa^{\mathrm{bd}}}g
+$$
+
+means that
+
+$$
+f(i)<g(i)
+$$
+
+for all sufficiently large $i<\kappa$.
+
+## Scales
+
+Suppose
+
+$$
+\operatorname{tcf}\left(
+\prod_{i<\kappa}\lambda_i,
+<_{J_\kappa^{\mathrm{bd}}}
+\right)=\theta.
+$$
+
+A sequence
+
+$$
+\langle f_\alpha:\alpha<\theta\rangle
+$$
+
+witnessing this true cofinality is called a **scale of length $\theta$** in the product
+$\prod_{i<\kappa}\lambda_i$ modulo the bounded ideal.
