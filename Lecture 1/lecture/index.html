@@ -1,0 +1,1154 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://YOUR-GITHUB-USERNAME.github.io/sierpinski/Lecture%201/lecture/">
+      
+      
+        <link rel="prev" href="../1.2%20Reduced%20Products/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Lecture 1: A Lore Dump - Sierpinski Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-1-a-lore-dump" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sierpinski Notes" class="md-header__button md-logo" aria-label="Sierpinski Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sierpinski Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture 1: A Lore Dump
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sierpinski Notes" class="md-nav__button md-logo" aria-label="Sierpinski Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sierpinski Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lecture 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1%20Basic%20Vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 Ideal language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2%20Reduced%20Products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 Reduced products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture 1: A Lore Dump
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture 1: A Lore Dump
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ideal-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ideal language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparisons-modulo-an-ideal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons modulo an ideal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduced products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#true-cofinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True cofinality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-cofinalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Possible cofinalities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Big picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudopowers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudopowers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudopowers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Representability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pseudopower-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pseudopower function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-the-ideals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricting the ideals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#covering-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covering numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Covering numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Easy facts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-and-a-pcf-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identities and a pcf bound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cov-vs-pp-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The cov vs. pp theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-general-cov-vs-pp-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The general cov vs. pp theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-fixed-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-fixed points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ideal-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ideal language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparisons-modulo-an-ideal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons modulo an ideal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduced products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#true-cofinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True cofinality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-cofinalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Possible cofinalities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Big picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudopowers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudopowers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudopowers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Representability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pseudopower-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pseudopower function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-the-ideals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricting the ideals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#covering-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covering numbers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Covering numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Easy facts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-and-a-pcf-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identities and a pcf bound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cov-vs-pp-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The cov vs. pp theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-general-cov-vs-pp-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The general cov vs. pp theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-fixed-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-fixed points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lecture-1-a-lore-dump">Lecture 1: A Lore Dump</h1>
+<p><em>An Introduction to the cov vs. pp Problem</em><br />
+Todd Eisworth</p>
+<p><a href="https://toddeisworth.github.io/lecture1-background.pdf">Original slides</a></p>
+<h2 id="vocabulary">Vocabulary</h2>
+<h3 id="ideal-language">Ideal language</h3>
+<p>Let <span class="arithmatex">\(J\)</span> be an ideal over a set <span class="arithmatex">\(A\)</span>.</p>
+<ul>
+<li><span class="arithmatex">\(J^+=\{X\subseteq A:X\notin J\}\)</span> is the collection of <span class="arithmatex">\(J\)</span>-positive subsets of <span class="arithmatex">\(A\)</span>.</li>
+<li><span class="arithmatex">\(J^*=\{X\subseteq A:A\setminus X\in J\}\)</span> denotes the dual filter.</li>
+<li><span class="arithmatex">\(J\mathbin{\upharpoonright}B=\{X\subseteq A:X\cap B\in J\}\)</span>.</li>
+<li><span class="arithmatex">\(J+B=J\mathbin{\upharpoonright}(A\setminus B)\)</span>.</li>
+</ul>
+<h3 id="comparisons-modulo-an-ideal">Comparisons modulo an ideal</h3>
+<p>For ordinal-valued functions with domain <span class="arithmatex">\(A\)</span>,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f&lt;_J g &amp;\iff \{a\in A:g(a)\le f(a)\}\in J,\\
+f\le_J g &amp;\iff \{a\in A:g(a)&lt;f(a)\}\in J.
+\end{aligned}
+\]</div>
+<p>The definitions of <span class="arithmatex">\(=_J\)</span> and <span class="arithmatex">\(\ne_J\)</span> are similar.</p>
+<h3 id="reduced-products">Reduced products</h3>
+<p>Our basic object of study will be reduced products <span class="arithmatex">\(\prod A/J\)</span> for <span class="arithmatex">\(A\)</span> a set of regular cardinals and <span class="arithmatex">\(J\)</span> an ideal on <span class="arithmatex">\(A\)</span>. We usually assume that <span class="arithmatex">\(A\)</span> is <em>progressive</em>, which means <span class="arithmatex">\(|A|&lt;|\min(A)|\)</span>.</p>
+<p>We may also consider indexed products <span class="arithmatex">\(\prod_{i\in\Gamma}\lambda_i\)</span>, where <span class="arithmatex">\(\Gamma\)</span> is some index set and <span class="arithmatex">\(\lambda_i\)</span> is a regular cardinal. The reduced product makes sense if <span class="arithmatex">\(J\)</span> is an ideal on <span class="arithmatex">\(\Gamma\)</span>, and we say that this is a <em>small product</em> if</p>
+<div class="arithmatex">\[
+|\Gamma|&lt;\min\{\lambda_i:i\in\Gamma\}.
+\]</div>
+<p>These approaches are equivalent.</p>
+<h3 id="true-cofinality">True cofinality</h3>
+<p>Let <span class="arithmatex">\(A\)</span> be a progressive set of regular cardinals, and let <span class="arithmatex">\(J\)</span> be a proper ideal on <span class="arithmatex">\(A\)</span>. We say</p>
+<div class="arithmatex">\[
+\operatorname{tcf}\left(\prod A/J\right)=\kappa
+\]</div>
+<p>if <span class="arithmatex">\(\kappa\)</span> is regular and there is a sequence <span class="arithmatex">\(\langle f_\alpha:\alpha&lt;\kappa\rangle\subseteq\prod A\)</span> such that</p>
+<div class="arithmatex">\[
+\alpha&lt;\beta&lt;\kappa\implies f_\alpha&lt;_J f_\beta,
+\]</div>
+<p>and the sequence is cofinal:</p>
+<div class="arithmatex">\[
+(\forall g\in\prod A)(\exists\alpha&lt;\kappa)\quad g&lt;_J f_\alpha.
+\]</div>
+<h3 id="possible-cofinalities">Possible cofinalities</h3>
+<p>If <span class="arithmatex">\(A\)</span> is a progressive set of regular cardinals, then <span class="arithmatex">\(\operatorname{pcf}(A)\)</span> is the set of all cardinals <span class="arithmatex">\(\operatorname{tcf}(\prod A/J)\)</span> where <span class="arithmatex">\(J\)</span> is an ideal on <span class="arithmatex">\(A\)</span> and the true cofinality exists. There are many ways of defining the same set of cardinals.</p>
+<p>Most important for us is that <span class="arithmatex">\(\max\operatorname{pcf}(A)\)</span> always exists, and it is equal to the cofinality of <span class="arithmatex">\((\prod A,&lt;)\)</span>.</p>
+<h3 id="big-picture">Big picture</h3>
+<p>If <span class="arithmatex">\(\lambda\)</span> is singular, there is a connection between</p>
+<div class="arithmatex">\[
+[\lambda]^{&lt;\lambda}
+\qquad\text{and}\qquad
+\prod(\lambda\cap\operatorname{Reg}).
+\]</div>
+<p>Questions about the former structure can be translated into questions about the latter, where pcf theory can be used to analyze the situation. How about an example?</p>
+<h2 id="pseudopowers">Pseudopowers</h2>
+<h3 id="representability">Representability</h3>
+<p>Let <span class="arithmatex">\(\lambda\)</span> be a singular cardinal. A cardinal <span class="arithmatex">\(\kappa\)</span> is <em>representable at <span class="arithmatex">\(\lambda\)</span></em> if there are a set <span class="arithmatex">\(A\)</span> and an ideal <span class="arithmatex">\(J\)</span> such that</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;A\text{ is cofinal in }\lambda\cap\operatorname{Reg},\\
+&amp;|A|=\operatorname{cf}(\lambda),\\
+&amp;J\text{ is an ideal on }A\text{ extending }J_A^{\mathrm{bd}},\\
+&amp;\kappa=\operatorname{tcf}\left(\prod A/J\right).
+\end{aligned}
+\]</div>
+<h3 id="the-pseudopower-function">The pseudopower function</h3>
+<p>Put</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\operatorname{PP}(\lambda)&amp;=\{\kappa:\kappa\text{ is representable at }\lambda\},\\
+\operatorname{pp}(\lambda)&amp;=\sup\operatorname{PP}(\lambda).
+\end{aligned}
+\]</div>
+<ul>
+<li>Why is <span class="arithmatex">\(\lambda^+\)</span> representable at <span class="arithmatex">\(\lambda\)</span>?</li>
+<li>
+<p>If <span class="arithmatex">\(A=\{\aleph_n:1\le n&lt;\omega\}\)</span>, show that</p>
+<div class="arithmatex">\[
+\operatorname{PP}(\aleph_\omega)=\operatorname{pcf}(A)\setminus A
+\quad\text{and}\quad
+\operatorname{pp}(\aleph_\omega)=\max\operatorname{pcf}(A).
+\]</div>
+</li>
+</ul>
+<h3 id="a-question">A question</h3>
+<p>What does the cardinal <span class="arithmatex">\(\operatorname{pp}(\lambda)\)</span> really mean?</p>
+<p>There is some <span class="arithmatex">\(\delta&lt;\lambda\)</span> such that <span class="arithmatex">\(\operatorname{pp}(\lambda)\)</span> is the least cardinal <span class="arithmatex">\(\eta\)</span> with the property that, whenever <span class="arithmatex">\(A\subseteq(\delta,\lambda)\cap\operatorname{Reg}\)</span> and <span class="arithmatex">\(|A|=\operatorname{cf}(\lambda)\)</span>, we have <span class="arithmatex">\(\max\operatorname{pcf}(A)\le\eta\)</span>.</p>
+<p>Can we prove it?</p>
+<h3 id="note">Note</h3>
+<p>If <span class="arithmatex">\(\lambda\)</span> is not a fixed point, then for all sufficiently large <span class="arithmatex">\(\delta&lt;\lambda\)</span> the set <span class="arithmatex">\(A=(\delta,\lambda)\cap\operatorname{Reg}\)</span> is a progressive interval of regular cardinals, and we can apply pcf analysis in this setting. This is one reason we know so much more about cardinal arithmetic at non-fixed points, and why getting information when <span class="arithmatex">\(\lambda=\aleph_\lambda\)</span> is more difficult.</p>
+<h3 id="restricting-the-ideals">Restricting the ideals</h3>
+<p>Assume <span class="arithmatex">\(\aleph_0\le\sigma=\operatorname{cf}(\sigma)\le\operatorname{cf}(\mu)&lt;\theta&lt;\mu\)</span>.</p>
+<ul>
+<li><span class="arithmatex">\(\Gamma(\theta,\sigma)\)</span> is the class of proper <span class="arithmatex">\(\sigma\)</span>-complete ideals on sets of cardinality <span class="arithmatex">\(&lt;\theta\)</span>.</li>
+<li>
+<p><span class="arithmatex">\(\operatorname{PP}_{\Gamma(\theta,\sigma)}(\mu)\)</span> consists of all regular cardinals <span class="arithmatex">\(\kappa\)</span> such that</p>
+<div class="arithmatex">\[
+\kappa=\operatorname{tcf}\left(\prod A/J\right),
+\]</div>
+<p>where</p>
+<div class="arithmatex">\[
+A\subseteq\mu\cap\operatorname{Reg},\qquad \sup A=\mu,\qquad |A|&lt;\theta,
+\]</div>
+<p>and <span class="arithmatex">\(J\in\Gamma(\theta,\sigma)\)</span> is an ideal on <span class="arithmatex">\(A\)</span> extending <span class="arithmatex">\(J_A^{\mathrm{bd}}\)</span>.</p>
+</li>
+</ul>
+<h2 id="covering-numbers">Covering numbers</h2>
+<p>The covering number <span class="arithmatex">\(\operatorname{cov}(\lambda,\kappa,\theta,\sigma)\)</span> is the least size of a family</p>
+<div class="arithmatex">\[
+\mathcal X\subseteq[\lambda]^{&lt;\kappa}
+\]</div>
+<p>such that every <span class="arithmatex">\(a\in[\lambda]^{&lt;\theta}\)</span> is contained in the union of fewer than <span class="arithmatex">\(\sigma\)</span> members of <span class="arithmatex">\(\mathcal X\)</span>.</p>
+<h3 id="easy-facts">Easy facts</h3>
+<p>For fixed values of the other parameters,</p>
+<ul>
+<li><span class="arithmatex">\(\operatorname{cov}(\lambda,\kappa,\theta,\sigma)\)</span> is weakly decreasing as <span class="arithmatex">\(\kappa\)</span> or <span class="arithmatex">\(\sigma\)</span> increases;</li>
+<li><span class="arithmatex">\(\operatorname{cov}(\lambda,\kappa,\theta,\sigma)\)</span> is weakly increasing as <span class="arithmatex">\(\lambda\)</span> or <span class="arithmatex">\(\theta\)</span> increases.</li>
+</ul>
+<h3 id="identities-and-a-pcf-bound">Identities and a pcf bound</h3>
+<p>Two easy observations:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\operatorname{cov}(\lambda,\kappa,\theta,\aleph_0)
+&amp;=\operatorname{cov}(\lambda,\kappa,\theta,2),\\
+\operatorname{cov}(\lambda,\kappa^+,\kappa^+,2)
+&amp;=\operatorname{cof}\bigl([\lambda]^\kappa,\subseteq\bigr).
+\end{aligned}
+\]</div>
+<p>One not as easy: if <span class="arithmatex">\(\aleph_0\le\sigma\le\operatorname{cf}(\lambda)&lt;\theta&lt;\lambda\)</span>, then</p>
+<div class="arithmatex">\[
+\operatorname{pp}_{\Gamma(\theta,\sigma)}(\lambda)
+\le\operatorname{cov}(\lambda,\lambda,\theta,\sigma).
+\]</div>
+<h3 id="the-cov-vs-pp-theorem">The cov vs. pp theorem</h3>
+<p>If <span class="arithmatex">\(\aleph_0&lt;\sigma=\operatorname{cf}(\sigma)\le\operatorname{cf}(\lambda)&lt;\theta&lt;\lambda\)</span>, then</p>
+<div class="arithmatex">\[
+\operatorname{pp}_{\Gamma(\theta,\sigma)}(\lambda)
+=\operatorname{cov}(\lambda,\lambda,\theta,\sigma).
+\]</div>
+<h3 id="the-general-cov-vs-pp-theorem">The general cov vs. pp theorem</h3>
+<p>Suppose as usual <span class="arithmatex">\(\lambda\ge\kappa\ge\theta&gt;\sigma&gt;\aleph_0\)</span>, where <span class="arithmatex">\(\sigma\)</span> is regular, and put <span class="arithmatex">\(\Gamma=\Gamma(\theta,\sigma)\)</span>.</p>
+<p><strong>Theorem (Shelah).</strong></p>
+<div class="arithmatex">\[
+\operatorname{cov}(\lambda,\kappa,\theta,\sigma)+\lambda
+=\sup_{\substack{\kappa\le\mu\le\lambda\\\sigma\le\operatorname{cf}(\mu)&lt;\theta}}
+\operatorname{pp}_\Gamma(\mu)+\lambda.
+\]</div>
+<p>If <span class="arithmatex">\(\kappa&lt;\lambda\)</span>, then the <span class="arithmatex">\(+\lambda\)</span> on the left can be omitted.</p>
+<h3 id="non-fixed-points">Non-fixed points</h3>
+<p>If <span class="arithmatex">\(\lambda\)</span> is singular and <span class="arithmatex">\(\lambda&lt;\aleph_\lambda\)</span>, then for every <span class="arithmatex">\(\kappa\)</span> with <span class="arithmatex">\(\operatorname{cf}(\lambda)\le\kappa&lt;\lambda\)</span> we have</p>
+<div class="arithmatex">\[
+\operatorname{pp}_\kappa(\lambda)\mathrel{=^{+}}\operatorname{cov}(\lambda,\lambda,\kappa^+,2).
+\]</div>
+<p>In particular,</p>
+<div class="arithmatex">\[
+\begin{gathered}
+\lambda\text{ singular with }\lambda&lt;\aleph_\lambda\\
+\implies
+\operatorname{pp}(\lambda)\mathrel{=^{+}}\operatorname{cov}(\lambda,\lambda,(\operatorname{cf}\lambda)^+,2).
+\end{gathered}
+\]</div>
+<h3 id="the-problem">The problem</h3>
+<p>Suppose <span class="arithmatex">\(\lambda\)</span> is singular of countable cofinality. Is</p>
+<div class="arithmatex">\[
+\operatorname{pp}(\lambda)=\operatorname{cov}(\lambda,\lambda,\aleph_1,2)?
+\]</div>
+<p>The simplest open case is where <span class="arithmatex">\(\lambda\)</span> is a singular fixed point of countable cofinality and <span class="arithmatex">\(\operatorname{pp}(\lambda)=\lambda^+\)</span>. Is <span class="arithmatex">\(\operatorname{cov}(\lambda,\lambda,\aleph_1,2)=\lambda^+\)</span>?</p>
+<p>Moti showed us that the answer to these questions is yes below 0-pistol.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
