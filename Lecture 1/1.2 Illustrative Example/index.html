@@ -1,0 +1,894 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://YOUR-GITHUB-USERNAME.github.io/sierpinski/Lecture%201/1.2%20Illustrative%20Example/">
+      
+      
+        <link rel="prev" href="../1.1%20Basic%20Vocabulary/">
+      
+      
+        <link rel="next" href="../1.3%20Pseudopowers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>1.2 An illustrative example - Sierpinski Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#12-an-illustrative-example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sierpinski Notes" class="md-header__button md-logo" aria-label="Sierpinski Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sierpinski Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.2 An illustrative example
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sierpinski Notes" class="md-nav__button md-logo" aria-label="Sierpinski Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sierpinski Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lecture 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1%20Basic%20Vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 Ideal language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 An illustrative example
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 An illustrative example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example-of-aleph_omega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example of \(\aleph_\omega\).
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The example of \(\aleph_\omega\).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-other-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Other Direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-to-our-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back to our proof
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3%20Pseudopowers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Pseudopowers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4%20Ideal%20Classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.4 General Representability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5%20Covering%20Numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.5 Covering numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6%20A%20Counting%20%20Lemma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.6 A Counting Lemma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.7%20cov%20vs%20pp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.7 The cov vs. pp Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.8%20Non-fixed%20points/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.8 Non-fixed points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.9%20The%20Problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.9 The cov vs pp problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example-of-aleph_omega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example of \(\aleph_\omega\).
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The example of \(\aleph_\omega\).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-other-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Other Direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-to-our-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back to our proof
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="12-an-illustrative-example">1.2 An illustrative example</h1>
+<h3 id="introduction">Introduction</h3>
+<p>The applications of pcf theory to cardinal arithmetic exploit a connection between two different versions of cofinality, one concerned with families of sets ordered by inclusion (such as the cofinality of <span class="arithmatex">\([\aleph_\omega]^{\aleph_0}\)</span> ordered by <span class="arithmatex">\(\subseteq\)</span>) and the other concerned with functions in infinite products ordered modulo an ideal on the index set (such as the cofinality of <span class="arithmatex">\(\prod_{n&lt;\omega}\aleph_n\)</span> modulo the finite ideal).</p>
+<p>The idea is that questions about the cofinalities of families of sets can sometimes be translated into questions about cofinalities of reduced products, and in this latter arena the tools of pcf theory can be used to analyze the situation.  With luck, the pcf analysis then sheds light on the original question.</p>
+<p>This interaction is evident in the most famous theorem of pcf theory: Shelah's result on <span class="arithmatex">\(\aleph_{\omega_4}\)</span>.  If we strip away conventional cardinal arithmetic and look at the pcf-theoretic heart of his result, we see there are two pieces:</p>
+<ol>
+<li><span class="arithmatex">\(\operatorname{cf}\left([\aleph_\omega]^{\aleph_0}, \subseteq\right)=\max\operatorname{pcf}(\{\aleph_{n+1}:n&lt;\omega\})\)</span>, and</li>
+<li><span class="arithmatex">\(\max\operatorname{pcf}(\{\aleph_{n+1}:n&lt;\omega\})&lt;\aleph_{\omega_4}.\)</span></li>
+</ol>
+<p>The second statement is the part that grabs peoples' attention because of the mysterious appearance of <span class="arithmatex">\(\omega_4\)</span>, but our notes are going to focus on a general version of the first statement:  When can questions about covering families of sets be translated into questions about reduced products of regular cardinals?  This is the heart of the cov vs. pp problem.</p>
+<h3 id="the-example-of-aleph_omega">The example of <span class="arithmatex">\(\aleph_\omega\)</span>.</h3>
+<p>To kick things off, we will sketch a proof of statement 1. </p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<div class="arithmatex">\[\max\operatorname{pcf}(\{\aleph_{n+1}:n&lt;\omega\}) = \operatorname{cf}\left([\aleph_\omega]^{\aleph_0},\subseteq\right).\]</div>
+</div>
+<p>Let <span class="arithmatex">\(\tau=\max\operatorname{pcf}(\{\aleph_{n+1}:n&lt;\omega\})\)</span> and let <span class="arithmatex">\(\eta=\operatorname{cf}\left([\aleph_\omega]^{\aleph_0},\subseteq\right)\)</span>. </p>
+<h4 id="one-direction">One direction</h4>
+<p>The inequality <span class="arithmatex">\(\tau\leq\eta\)</span> is the easier of the two, so we dispose of it first.   This part of the proof is quite flexible, and shows us how to pass from covering families to cofinal sets of functions.</p>
+<p>Given a countable subset <span class="arithmatex">\(X\)</span> of <span class="arithmatex">\(\aleph_\omega\)</span>, we define the function <span class="arithmatex">\(g_X\in\prod A\)</span> by</p>
+<div class="arithmatex">\[
+g_X(a)=\sup(X\cap a).
+\]</div>
+<p>Now suppose <span class="arithmatex">\(\mathcal{X}\)</span> is cofinal in <span class="arithmatex">\(([\aleph_\omega]^{\aleph_0},\subseteq)\)</span>.  Given any function <span class="arithmatex">\(f\in \prod A\)</span>, there will be an <span class="arithmatex">\(X\in \mathcal{X}\)</span> such that</p>
+<div class="arithmatex">\[
+\{f(a)+1:a\in A\}\subseteq X.
+\]</div>
+<p>But then</p>
+<div class="arithmatex">\[
+a\in A\Longrightarrow f(a)&lt; g_X(a),
+\]</div>
+<p>and so the family <span class="arithmatex">\(\{g_X:X\in\mathcal{X}\}\)</span> is (pointwise) cofinal in <span class="arithmatex">\(\prod A\)</span>.  Since <span class="arithmatex">\(\max\operatorname{pcf}(A)\)</span> is the minimum cardinality of a pointwise cofinal subset of <span class="arithmatex">\(\prod A\)</span>, we see <span class="arithmatex">\(\tau\leq\eta\)</span>.  We will encounter variants of this argument a little later as this is a basic tool.</p>
+<h4 id="the-other-direction">The Other Direction</h4>
+<p>The reverse inequality is more difficult, and proving it here will provide us with a case study of another basic technique that involves internally approachable elementary submodels and their characteristic functions. This part of the argument is where we will use the fact that <span class="arithmatex">\(|A|&lt;\omega_1&lt;\min(A)\)</span>, as <span class="arithmatex">\(\omega_1\)</span> will be the length of the chain of models we use.  This may be a good time for the reader to take a look at Section 5 of <a href="https://www.winterschool.eu/files/3-Cardinal_Arithmetic.pdf">Abraham–Magidor, <em>Cardinal Arithmetic</em></a> to remind themselves of the notation that we are borrowing.</p>
+<p>Fix a sufficiently large regular <span class="arithmatex">\(\chi\)</span> and work in <span class="arithmatex">\(\mathfrak A=(H(\chi),\in,&lt;_\chi)\)</span>, with the Skolem functions given by the fixed well-order <span class="arithmatex">\(&lt;_\chi\)</span>. For each <span class="arithmatex">\(\eta\in\operatorname{pcf}(A)\)</span>, fix a universal sequence <span class="arithmatex">\(\vec f^\eta=\langle f^\eta_\xi:\xi&lt;\eta\rangle\)</span> of functions in <span class="arithmatex">\(\prod A\)</span> that is minimally obedient at cofinality <span class="arithmatex">\(\omega_1\)</span>. Let <span class="arithmatex">\(\vec f=\langle\vec f^\eta:\eta\in\operatorname{pcf}(A)\rangle\)</span> be the resulting array.</p>
+<p>Let <span class="arithmatex">\(Y\subseteq\lambda\)</span> be countable. Choose an increasing continuous chain <span class="arithmatex">\(\langle N_i:i&lt;\omega_1\rangle\)</span> of countable elementary submodels of <span class="arithmatex">\(\mathfrak A\)</span> with <span class="arithmatex">\(Y\subseteq N_0\)</span> and <span class="arithmatex">\(\lambda,A,\omega_1,\vec f\in N_0\)</span>. Since <span class="arithmatex">\(A\)</span> is countable, <span class="arithmatex">\(A\subseteq N_0\)</span>.</p>
+<p>At each successor stage arrange that <span class="arithmatex">\(\langle N_j:j\leq i\rangle\in N_{i+1}\)</span>. In particular, <span class="arithmatex">\(i,N_i\in N_{i+1}\)</span>. The union <span class="arithmatex">\(N=\bigcup_{i&lt;\omega_1}N_i\)</span> is internally approachable of length <span class="arithmatex">\(\omega_1\)</span>, has size <span class="arithmatex">\(\aleph_1\)</span>, and contains <span class="arithmatex">\(\omega_1+1\)</span> pointwise. Its characteristic function on <span class="arithmatex">\(A\)</span> is defined by</p>
+<div class="arithmatex">\[
+\operatorname{Ch}_N(\rho)=\sup(N\cap\rho)\qquad(\rho\in A).
+\]</div>
+<p>For each <span class="arithmatex">\(\rho\in A\)</span>, the sequence <span class="arithmatex">\(\langle\sup(N_i\cap\rho):i&lt;\omega_1\rangle\)</span> is continuous and strictly increasing. Indeed, <span class="arithmatex">\(\sup(N_i\cap\rho)\)</span> and its successor both belong to <span class="arithmatex">\(N_{i+1}\cap\rho\)</span>. The sequence is cofinal in <span class="arithmatex">\(\operatorname{Ch}_N(\rho)\)</span>. Consequently <span class="arithmatex">\(N\cap\rho\)</span> contains a club in <span class="arithmatex">\(\operatorname{Ch}_N(\rho)\)</span>, and this ordinal has cofinality <span class="arithmatex">\(\omega_1\)</span>.</p>
+<h3 id="model-comparison">Model comparison</h3>
+<p>We formulate the model comparison lemma for an arbitrary uncountable cardinal <span class="arithmatex">\(\lambda\)</span> so that we can quote it later.</p>
+<div class="admonition lemma">
+<p class="admonition-title">Model Comparison Lemma</p>
+<p>Let <span class="arithmatex">\(\lambda\)</span> be an uncountable cardinal and suppose <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(N\)</span> are elementary submodels of <span class="arithmatex">\(\mathfrak A\)</span> with</p>
+<div class="arithmatex">\[
+M\subseteq N \text{ and }\lambda\in M.
+\]</div>
+<p>Let <span class="arithmatex">\(\eta&lt;\lambda\)</span> be an infinite cardinal, and assume</p>
+<ol>
+<li><span class="arithmatex">\(M\cap\eta=N\cap\eta\)</span>.</li>
+<li><span class="arithmatex">\(\sup(M\cap\rho)=\sup(N\cap\rho)\)</span> for every regular cardinal <span class="arithmatex">\(\rho\in M\)</span> with <span class="arithmatex">\(\eta&lt;\rho\leq\lambda\)</span>.</li>
+</ol>
+<p>Then <span class="arithmatex">\(M\cap\lambda=N\cap\lambda\)</span>.</p>
+</div>
+<p><strong>Proof.</strong> Suppose <span class="arithmatex">\(\alpha\in(N\cap\lambda)\setminus M\)</span>. Since <span class="arithmatex">\(\lambda\in M\)</span>, we can choose a set <span class="arithmatex">\(X\in M\)</span> of least possible cardinality such that <span class="arithmatex">\(\alpha\in X\subseteq\lambda\)</span>. Put <span class="arithmatex">\(\kappa=|X|\)</span>.</p>
+<p>If <span class="arithmatex">\(\kappa\leq\eta\)</span>, take a bijection <span class="arithmatex">\(b\colon\kappa\to X\)</span> in <span class="arithmatex">\(M\)</span>. Then <span class="arithmatex">\(b^{-1}(\alpha)\in N\cap\kappa\subseteq M\)</span> by (1), so <span class="arithmatex">\(\alpha\in M\)</span>, a contradiction.</p>
+<p>Put <span class="arithmatex">\(\rho=\operatorname{cf}(\kappa)\)</span>. By elementarity, <span class="arithmatex">\(\rho\in M\)</span>, and there is an increasing sequence <span class="arithmatex">\(\langle X_i:i&lt;\rho\rangle\in M\)</span> whose union is <span class="arithmatex">\(X\)</span>, with <span class="arithmatex">\(|X_i|&lt;\kappa\)</span> for every <span class="arithmatex">\(i&lt;\rho\)</span>. By elementarity of <span class="arithmatex">\(N\)</span>, some <span class="arithmatex">\(i\in N\cap\rho\)</span> satisfies <span class="arithmatex">\(\alpha\in X_i\)</span>.</p>
+<p>If <span class="arithmatex">\(\rho\leq\eta\)</span>, take <span class="arithmatex">\(j=i\in M\)</span> by (1). Otherwise, <span class="arithmatex">\(\rho\)</span> is a regular cardinal in <span class="arithmatex">\(M\)</span> with <span class="arithmatex">\(\eta&lt;\rho\leq\lambda\)</span>, so (2) gives <span class="arithmatex">\(j\in M\cap\rho\)</span> with <span class="arithmatex">\(i\leq j\)</span>. In either case, <span class="arithmatex">\(X_j\in M\)</span> contains <span class="arithmatex">\(\alpha\)</span> and has size less than <span class="arithmatex">\(\kappa\)</span>, contradicting the choice of <span class="arithmatex">\(X\)</span>. <span class="arithmatex">\(\square\)</span></p>
+<h3 id="back-to-our-proof">Back to our proof</h3>
+<p>Return to <span class="arithmatex">\(\lambda=\aleph_\omega\)</span> and <span class="arithmatex">\(A=\{\aleph_n:2\leq n&lt;\omega\}\)</span>. We use the Model Comparison Lemma to show that for an internally approachable model <span class="arithmatex">\(N\)</span> as discussed above, the set <span class="arithmatex">\(N\cap\lambda\)</span> is determined by the characteristic function of <span class="arithmatex">\(N\)</span> on <span class="arithmatex">\(A\)</span>. Suppose <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(N'\)</span> are unions of towers as above with the same characteristic function on <span class="arithmatex">\(A\)</span>, and define <span class="arithmatex">\(M=N\cap N'\)</span>. Since the two models are closed under the same Skolem functions, <span class="arithmatex">\(M\prec\mathfrak A\)</span>.</p>
+<p>Take <span class="arithmatex">\(\eta=\omega_1\)</span>. All three models contain <span class="arithmatex">\(\omega_1\)</span> pointwise, and for each <span class="arithmatex">\(\rho\in A\)</span> the traces <span class="arithmatex">\(N\cap\rho\)</span> and <span class="arithmatex">\(N'\cap\rho\)</span> contain clubs in their common supremum, which has cofinality <span class="arithmatex">\(\omega_1\)</span>. These clubs intersect cofinally, so</p>
+<div class="arithmatex">\[
+\sup(M\cap\rho)=\sup(N\cap\rho)=\sup(N'\cap\rho).
+\]</div>
+<p>The regular cardinals in <span class="arithmatex">\((\omega_1,\lambda]\)</span> are exactly the members of <span class="arithmatex">\(A\)</span>. Apply the Model Comparison Lemma to <span class="arithmatex">\(M\subseteq N\)</span> and to <span class="arithmatex">\(M\subseteq N'\)</span>. It follows that <span class="arithmatex">\(N\cap\lambda=N'\cap\lambda\)</span>.</p>
+<p>The tower makes <span class="arithmatex">\(N\)</span> <span class="arithmatex">\(\omega_1\)</span>-presentable in the sense of Abraham–Magidor. By their Corollary 5.9, <span class="arithmatex">\(\operatorname{Ch}_N\)</span> is the pointwise maximum of finitely many functions from the fixed array <span class="arithmatex">\(\vec f\)</span>. Since the array contains at most <span class="arithmatex">\(\max\operatorname{pcf}(A)\)</span> functions, at most <span class="arithmatex">\(\max\operatorname{pcf}(A)\)</span> characteristic functions occur. (See <a href="https://www.winterschool.eu/files/3-Cardinal_Arithmetic.pdf">Abraham–Magidor, <em>Cardinal Arithmetic</em>, Definition 5.6 and Corollary 5.9.</a>)</p>
+<p>We can now choose one representative tower for each characteristic function that occurs. Every countable <span class="arithmatex">\(Y\subseteq\lambda\)</span> is contained in the trace of the union of one of the representative towers. By regularity of <span class="arithmatex">\(\omega_1\)</span>, <span class="arithmatex">\(Y\)</span> is already contained in the trace of a countable stage of that tower. Taking all the countable stages of the representative towers therefore gives a cofinal family in <span class="arithmatex">\(([\lambda]^{\aleph_0},\subseteq)\)</span> of size at most <span class="arithmatex">\(\max\operatorname{pcf}(A)\cdot\aleph_1=\max\operatorname{pcf}(A)\)</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

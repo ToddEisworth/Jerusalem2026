@@ -1,0 +1,891 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://YOUR-GITHUB-USERNAME.github.io/sierpinski/Lecture%201/1.8%20Non-fixed%20points/">
+      
+      
+        <link rel="prev" href="../1.7%20cov%20vs%20pp/">
+      
+      
+        <link rel="next" href="../1.9%20The%20Problem/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>1.8 Non-fixed points - Sierpinski Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#18-non-fixed-points" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sierpinski Notes" class="md-header__button md-logo" aria-label="Sierpinski Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sierpinski Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.8 Non-fixed points
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sierpinski Notes" class="md-nav__button md-logo" aria-label="Sierpinski Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sierpinski Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lecture 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lecture 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1%20Basic%20Vocabulary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 Ideal language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2%20Illustrative%20Example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 An illustrative example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3%20Pseudopowers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 Pseudopowers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4%20Ideal%20Classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.4 General Representability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5%20Covering%20Numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.5 Covering numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6%20A%20Counting%20%20Lemma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.6 A Counting Lemma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.7%20cov%20vs%20pp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.7 The cov vs. pp Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.8 Non-fixed points
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.8 Non-fixed points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-special-about-a-non-fixed-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's special about a non-fixed point?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s special about a non-fixed point?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-lower-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lower bound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-characteristic-function-from-the-scales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the characteristic function from the scales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding-the-coordinates-needed-for-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding the coordinates needed for \(Y\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying model comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.9%20The%20Problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.9 The cov vs pp problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-special-about-a-non-fixed-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's special about a non-fixed point?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s special about a non-fixed point?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-lower-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lower bound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-characteristic-function-from-the-scales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the characteristic function from the scales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding-the-coordinates-needed-for-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding the coordinates needed for \(Y\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying model comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="18-non-fixed-points">1.8 Non-fixed points</h1>
+<p>We will now take a look at a result of Shelah that shows us how we pcf theory can be deployed more effectively when dealing with singular cardinals <span class="arithmatex">\(\lambda&lt;\aleph_\lambda\)</span>.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>Suppose <span class="arithmatex">\(\lambda\)</span> is singular, <span class="arithmatex">\(\lambda&lt;\aleph_\lambda\)</span>, and <span class="arithmatex">\(\operatorname{cf}(\lambda)\leq\theta&lt;\lambda\)</span>. Then</p>
+<div class="arithmatex">\[\operatorname{cov}(\lambda,\lambda,\theta^+,2)=\operatorname{pp}_\theta(\lambda).\]</div>
+<p>In particular,</p>
+<div class="arithmatex">\[\operatorname{cov}\bigl(\lambda,\lambda,\operatorname{cf}(\lambda)^+,2\bigr)=\operatorname{pp}(\lambda).\]</div>
+</div>
+<p>This result is from <em>Cardinal Arithmetic</em>, Chapter IX, Claim 3.7, and <em>Cardinal arithmetic for skeptics</em>, Theorem 5.7. We have tried to give a more straightforward presentation of the proof along the lines of Abraham and Magidor's handbook article.</p>
+<h3 id="whats-special-about-a-non-fixed-point">What's special about a non-fixed point?</h3>
+<p>The proof requires a little more pcf theory than we've assumed elsewhere.  To start,  we need the following (somewhat famous) result of Shelah that we quote as a black box.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(A\)</span> is a progressive interval of regular cardinals, then <span class="arithmatex">\(|\operatorname{pcf}(A)|&lt;|A|^{+4}\)</span>.</p>
+</div>
+<p>The above theorem is crucial for us because we are working with singular <span class="arithmatex">\(\lambda\)</span> such that <span class="arithmatex">\(\lambda&lt;\aleph_\lambda\)</span>, because for any such <span class="arithmatex">\(\lambda\)</span> there is a <span class="arithmatex">\(\delta&lt;\lambda\)</span> so that <span class="arithmatex">\((\delta,\lambda)\cap\mathsf{Reg}\)</span> is a progressive interval of regular cardinals.  The next easy lemma uses this fact.</p>
+<div class="admonition lemma">
+<p class="admonition-title">Lemma</p>
+<p>Suppose <span class="arithmatex">\(\lambda\)</span> is singular, <span class="arithmatex">\(\lambda&lt;\aleph_\lambda\)</span>, and <span class="arithmatex">\(\operatorname{cf}(\lambda)\leq\theta&lt;\lambda\)</span>. There is a regular cardinal <span class="arithmatex">\(\delta\)</span> with <span class="arithmatex">\(\theta&lt;\delta&lt;\lambda\)</span> such that, for <span class="arithmatex">\(A=(\delta,\lambda)\cap\operatorname{Reg}\)</span>, we have</p>
+<ol>
+<li><span class="arithmatex">\(|\operatorname{pcf}(A)|&lt;\delta\)</span>, and</li>
+<li><span class="arithmatex">\(\max\operatorname{pcf}(B)\leq\operatorname{pp}_\theta(\lambda)\)</span> for every nonempty <span class="arithmatex">\(B\subseteq A\)</span> of size at most <span class="arithmatex">\(\theta\)</span>.</li>
+</ol>
+</div>
+<p><strong>Proof.</strong> As we observed earlier, we can choose <span class="arithmatex">\(\beta&lt;\lambda\)</span> so that (2) holds for every nonempty <span class="arithmatex">\(B\subseteq(\beta,\lambda)\cap\mathsf{Reg}\)</span> of size at most <span class="arithmatex">\(\theta\)</span>.</p>
+<p>Write <span class="arithmatex">\(\lambda=\aleph_\alpha\)</span>. Since <span class="arithmatex">\(\lambda\)</span> is not a fixed point, <span class="arithmatex">\(\alpha&lt;\lambda\)</span>. Put <span class="arithmatex">\(\kappa=|\alpha|\)</span>. Since <span class="arithmatex">\(\lambda\)</span> is a limit cardinal we know <span class="arithmatex">\(\kappa^{+4}&lt;\lambda\)</span>, and so we may choose a regular cardinal <span class="arithmatex">\(\delta\)</span> with</p>
+<div class="arithmatex">\[\max\{\beta,\theta,\kappa^{+4}\}&lt;\delta&lt;\lambda.\]</div>
+<p>Now <span class="arithmatex">\(A=(\delta,\lambda)\cap\operatorname{Reg}\)</span> has size at most <span class="arithmatex">\(\kappa\)</span>, since every cardinal in <span class="arithmatex">\(A\)</span> has index below <span class="arithmatex">\(\alpha\)</span>. Thus <span class="arithmatex">\(|A|\leq\kappa&lt;\delta&lt;\min A\)</span>, and Shelah's bound for progressive intervals of regular cardinals gives</p>
+<div class="arithmatex">\[|\operatorname{pcf}(A)|&lt;|A|^{+4}\leq\kappa^{+4}&lt;\delta.\]</div>
+<p>This proves (1), and (2) follows from <span class="arithmatex">\(\beta&lt;\delta\)</span>. <span class="arithmatex">\(\square\)</span></p>
+<p>Put <span class="arithmatex">\(P=\operatorname{pp}_\theta(\lambda)\)</span>, and take <span class="arithmatex">\(\delta\)</span> and <span class="arithmatex">\(A=(\delta,\lambda)\cap\operatorname{Reg}\)</span> from the preceding lemma. Then</p>
+<div class="arithmatex">\[
+|A|\leq|\operatorname{pcf}(A)|&lt;\delta&lt;\min A.
+\]</div>
+<p>Fix an array <span class="arithmatex">\(\vec f=\langle\vec f^\eta:\eta\in\operatorname{pcf}(A)\rangle\)</span>, where each <span class="arithmatex">\(\vec f^\eta=\langle f^\eta_\xi:\xi&lt;\eta\rangle\)</span> is a universal sequence in <span class="arithmatex">\(\prod A\)</span> that is minimally obedient at cofinality <span class="arithmatex">\(\delta\)</span>. The inequality <span class="arithmatex">\(|A|&lt;\delta&lt;\min A\)</span> allows us to choose these sequences. <a href="https://www.winterschool.eu/files/3-Cardinal_Arithmetic.pdf">Abraham–Magidor, <em>Cardinal Arithmetic</em>, §5.2, following Definition 5.6.</a></p>
+<h4 id="the-lower-bound">The lower bound</h4>
+<p>As in the <span class="arithmatex">\(\aleph_\omega\)</span> example, a covering family gives a cofinal family in every reduced product <span class="arithmatex">\(\prod B/J\)</span> used to compute <span class="arithmatex">\(P\)</span>. For each covering set <span class="arithmatex">\(X\)</span>, put <span class="arithmatex">\(g_X(a)=\sup(X\cap a)\)</span> when <span class="arithmatex">\(a&gt;|X|\)</span> and <span class="arithmatex">\(g_X(a)=0\)</span> otherwise. Given <span class="arithmatex">\(f\in\prod B\)</span>, choose <span class="arithmatex">\(X\)</span> containing <span class="arithmatex">\(\{f(a)+1:a\in B\}\)</span>, a set of size at most <span class="arithmatex">\(\theta\)</span>. Then <span class="arithmatex">\(f(a)&lt;g_X(a)\)</span> on the tail above <span class="arithmatex">\(|X|\)</span>, so <span class="arithmatex">\(f&lt;_J g_X\)</span> since <span class="arithmatex">\(J\)</span> contains the bounded subsets of <span class="arithmatex">\(B\)</span>. Taking the supremum over the representations gives <span class="arithmatex">\(P\leq\operatorname{cov}(\lambda,\lambda,\theta^+,2)\)</span>.</p>
+<h4 id="reading-the-characteristic-function-from-the-scales">Reading the characteristic function from the scales</h4>
+<p>For each <span class="arithmatex">\(\gamma&lt;\lambda\)</span> of cofinality <span class="arithmatex">\(\delta\)</span>, fix a club <span class="arithmatex">\(e_\gamma\)</span> in <span class="arithmatex">\(\gamma\)</span> of order type <span class="arithmatex">\(\delta\)</span>. Work in one sufficiently large Skolemized structure <span class="arithmatex">\(\mathfrak A\)</span> on <span class="arithmatex">\(H(\chi)\)</span>, with <span class="arithmatex">\(\lambda,\delta,A,\vec f\)</span>, and the club sequence named.</p>
+<p>Fix <span class="arithmatex">\(Y\in[\lambda]^{\leq\theta}\)</span>. Build an increasing continuous chain <span class="arithmatex">\(\langle N_i:i\leq\delta\rangle\)</span> of elementary submodels with <span class="arithmatex">\(|N_i|&lt;\delta\)</span> for <span class="arithmatex">\(i&lt;\delta\)</span>, with <span class="arithmatex">\(Y\cup\operatorname{pcf}(A)\subseteq N_0\)</span>, and with <span class="arithmatex">\(\langle N_j:j\leq i\rangle\in N_{i+1}\)</span> for each <span class="arithmatex">\(i&lt;\delta\)</span>. Its union <span class="arithmatex">\(N=N_\delta\)</span> has size <span class="arithmatex">\(\delta\)</span> and contains <span class="arithmatex">\(\delta+1\)</span> pointwise, so it is <span class="arithmatex">\(\delta\)</span>-presentable in the sense of Abraham–Magidor.</p>
+<p>Put <span class="arithmatex">\(h=\operatorname{Ch}_N\restriction A\)</span> and <span class="arithmatex">\(\gamma_\eta=\sup(N\cap\eta)\)</span> for <span class="arithmatex">\(\eta\in\operatorname{pcf}(A)\)</span>. As in the argument at <span class="arithmatex">\(\aleph_\omega\)</span>, the stage suprema form a club in <span class="arithmatex">\(h(a)\)</span> contained in <span class="arithmatex">\(N\cap a\)</span>, and <span class="arithmatex">\(\operatorname{cf}(h(a))=\delta\)</span> for each <span class="arithmatex">\(a\in A\)</span>.</p>
+<p>For each <span class="arithmatex">\(\eta\in\operatorname{pcf}(A)\)</span>, both <span class="arithmatex">\(\eta\)</span> and <span class="arithmatex">\(\vec f\)</span> belong to <span class="arithmatex">\(N_0\)</span>, so <span class="arithmatex">\(\vec f^\eta\in N\)</span>. Also <span class="arithmatex">\(\gamma_\eta&lt;\eta\)</span> because <span class="arithmatex">\(\eta\)</span> is regular and <span class="arithmatex">\(|N|=\delta&lt;\min A\leq\eta\)</span>. Abraham–Magidor then give <span class="arithmatex">\(f^\eta_{\gamma_\eta}\leq h\)</span> pointwise on <span class="arithmatex">\(A\)</span>. Moreover, the agreement set</p>
+<div class="arithmatex">\[
+C_\eta=\{a\in A:f^\eta_{\gamma_\eta}(a)=h(a)\}
+\]</div>
+<p>is a generator for <span class="arithmatex">\(\eta\)</span>, so <span class="arithmatex">\(J_{\leq\eta}[A]=J_{&lt;\eta}[A]+C_\eta\)</span>. <a href="https://www.winterschool.eu/files/3-Cardinal_Arithmetic.pdf">Abraham–Magidor, <em>Cardinal Arithmetic</em>, §5.2, Lemmas 5.4, 5.7, and 5.8(1).</a></p>
+<h4 id="coding-the-coordinates-needed-for-y">Coding the coordinates needed for <span class="arithmatex">\(Y\)</span></h4>
+<p>For each <span class="arithmatex">\(a\in A\)</span>, the club in <span class="arithmatex">\(h(a)\)</span> contained in <span class="arithmatex">\(N\cap a\)</span> meets <span class="arithmatex">\(e_{h(a)}\)</span> cofinally. Fix a function on <span class="arithmatex">\(N\)</span> that, given <span class="arithmatex">\(a\in A\)</span> and <span class="arithmatex">\(x\in N\cap a\)</span>, selects a point of <span class="arithmatex">\(N\cap e_{h(a)}\)</span> above <span class="arithmatex">\(x\)</span>. Take <span class="arithmatex">\(M\prec N\)</span> of size at most <span class="arithmatex">\(\theta\)</span> containing <span class="arithmatex">\(Y\)</span> pointwise and closed under this function. Then</p>
+<div class="arithmatex">\[
+M\cap e_{h(a)}\text{ is cofinal in }M\cap a
+\qquad(a\in M\cap A).
+\]</div>
+<p>Abraham and Magidor's Corollary 5.9 expresses <span class="arithmatex">\(h\)</span> on all of <span class="arithmatex">\(A\)</span> as a finite pointwise maximum of functions from the array. For the model comparison below, we will find a finite pointwise maximum <span class="arithmatex">\(g\)</span> that agrees with <span class="arithmatex">\(h\)</span> on <span class="arithmatex">\(M\cap A\)</span> using only sequences of length at most <span class="arithmatex">\(P\)</span>.</p>
+<p>Put <span class="arithmatex">\(B_0=M\cap A\)</span>. While <span class="arithmatex">\(B_n\)</span> is nonempty, put</p>
+<div class="arithmatex">\[
+\eta_n=\max\operatorname{pcf}(B_n),
+\qquad B_{n+1}=B_n\setminus C_{\eta_n}.
+\]</div>
+<p>Since <span class="arithmatex">\(B_n\subseteq M\cap A\)</span> has size at most <span class="arithmatex">\(\theta\)</span>, the tail bound gives <span class="arithmatex">\(\eta_n\leq P\)</span>. Since <span class="arithmatex">\(B_n\in J_{\leq\eta_n}[A]\)</span> and <span class="arithmatex">\(C_{\eta_n}\)</span> is a generator, <span class="arithmatex">\(B_{n+1}\in J_{&lt;\eta_n}[A]\)</span>. Thus <span class="arithmatex">\(\eta_{n+1}&lt;\eta_n\)</span> whenever <span class="arithmatex">\(B_{n+1}\)</span> is nonempty, so the process terminates after finitely many steps.</p>
+<p>Let <span class="arithmatex">\(g\)</span> be the pointwise maximum of the finitely many selected functions <span class="arithmatex">\(f^{\eta_n}_{\gamma_{\eta_n}}\)</span>. Each is pointwise at most <span class="arithmatex">\(h\)</span>, and at every coordinate in <span class="arithmatex">\(M\cap A\)</span> at least one of them equals <span class="arithmatex">\(h\)</span>. Hence <span class="arithmatex">\(g=h\)</span> on <span class="arithmatex">\(M\cap A\)</span>.</p>
+<p>Let <span class="arithmatex">\(\mathcal G\)</span> consist of all finite pointwise maxima of functions <span class="arithmatex">\(f^\eta_\xi\)</span> with <span class="arithmatex">\(\eta\in\operatorname{pcf}(A)\)</span> and <span class="arithmatex">\(\xi&lt;\eta\leq P\)</span>. The finite list of pairs <span class="arithmatex">\((\eta_n,\gamma_{\eta_n})\)</span> determines <span class="arithmatex">\(g\)</span> on all of <span class="arithmatex">\(A\)</span>. There are at most <span class="arithmatex">\(P\)</span> possible pairs, and hence at most <span class="arithmatex">\(P\)</span> finite lists. Thus <span class="arithmatex">\(g\)</span> lies in a family <span class="arithmatex">\(\mathcal G\)</span> of size at most <span class="arithmatex">\(P\)</span> fixed independently of <span class="arithmatex">\(Y\)</span>.</p>
+<h4 id="applying-model-comparison">Applying model comparison</h4>
+<p>Let</p>
+<div class="arithmatex">\[
+L=\operatorname{Hull}_{\mathfrak A}\bigl((\delta+1)\cup\{g\}\bigr),
+\qquad K=M\cap L.
+\]</div>
+<p>The common Skolem functions give <span class="arithmatex">\(K\prec\mathfrak A\)</span>, and <span class="arithmatex">\(\delta\subseteq L\)</span> gives <span class="arithmatex">\(K\cap\delta=M\cap\delta\)</span>.</p>
+<p>Let <span class="arithmatex">\(a\in K\)</span> be regular with <span class="arithmatex">\(\delta&lt;a\leq\lambda\)</span>. Since <span class="arithmatex">\(\lambda\)</span> is singular, <span class="arithmatex">\(a\in A\)</span>, so <span class="arithmatex">\(a\in M\cap A\)</span> and <span class="arithmatex">\(h(a)=g(a)\in L\)</span>. Hence <span class="arithmatex">\(e_{h(a)}\in L\)</span>. Its increasing enumeration has domain <span class="arithmatex">\(\delta\)</span>, so <span class="arithmatex">\(\delta\subseteq L\)</span> gives <span class="arithmatex">\(e_{h(a)}\subseteq L\)</span>. Therefore <span class="arithmatex">\(K\cap a\)</span> contains <span class="arithmatex">\(M\cap e_{h(a)}\)</span>, which is cofinal in <span class="arithmatex">\(M\cap a\)</span>.</p>
+<p>Apply the Model Comparison Lemma to <span class="arithmatex">\(K\subseteq M\)</span> with cutoff <span class="arithmatex">\(\delta\)</span>. We obtain</p>
+<div class="arithmatex">\[
+Y\subseteq M\cap\lambda=K\cap\lambda\subseteq L\cap\lambda.
+\]</div>
+<p>As <span class="arithmatex">\(g\)</span> ranges over <span class="arithmatex">\(\mathcal G\)</span>, the traces of these hulls give at most <span class="arithmatex">\(P\)</span> sets of size at most <span class="arithmatex">\(\delta\)</span> covering <span class="arithmatex">\([\lambda]^{\leq\theta}\)</span>. Together with the lower bound, this yields</p>
+<div class="arithmatex">\[
+P
+=\operatorname{cov}(\lambda,\lambda,\theta^+,2)
+=\operatorname{cov}(\lambda,\delta^+,\theta^+,2).
+\]</div>
+<ol>
+<li>
+<p>Saharon Shelah, <em>Cardinal Arithmetic</em>, Oxford Logic Guides 29, Oxford University Press, 1994. See Chapter II for generators and covering calculus, and Chapter IX, Sections 2–3, especially Claim 3.7 and its proof.</p>
+</li>
+<li>
+<p>Saharon Shelah, “Cardinal arithmetic for skeptics,” <em>Bulletin of the American Mathematical Society</em> (N.S.) <strong>26</strong> (1992), 197–210. Theorem 5.7, p. 204. <a href="https://shelah.logic.at/files/95288/400a.pdf">PDF</a>.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
